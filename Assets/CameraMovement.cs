@@ -4,53 +4,18 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    [SerializeField] private Vector3 startPos;
-    private Vector3 dragPos;
+    public float Speed;
 
-    [SerializeField] private Camera cam; //obiekt kamery
-
-    
-    void Update()
+    public void Update()
     {
-        PanCamera();
-    }
-
-    //przesuwanie pozycji kamery (lewo, prawo, góra, dół)
-    private void PanCamera()
-    {
-        if (Input.GetMouseButtonDown(0)) {
-            startPos = cam.ScreenToWorldPoint(Input.mousePosition);
-        }
-
-
-        if (Input.GetMouseButton(0)) {
-            dragPos = startPos - cam.WorldToScreenPoint(Input.mousePosition);
-            Debug.Log(dragPos);
-        }
-
-         MoveCamera();
-    }
-
-    private void MoveCamera()
-    {
-        if (dragPos.x > 0)
-        {
-            cam.transform.position = new Vector3()
-            {
-                z = cam.transform.position.z,
-                y= cam.transform.position.y,
-                x =  cam.transform.position.x +1f*Time.deltaTime
-                
-            };
-        }else if (dragPos.x < 0)
-        {
-            cam.transform.position = new Vector3()
-            {
-                z = cam.transform.position.z,
-                y= cam.transform.position.y,
-                x =  cam.transform.position.x -1f*Time.deltaTime
-                
-            };
+        // if our finger is on the screen and it has moved from its start position than do the code 
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved){
+            Vector2 TouchDeltaPosition = Input.GetTouch(0).deltaPosition;
+            transform.Translate(-TouchDeltaPosition.x * Speed, -TouchDeltaPosition.y * Speed, 0);
+            transform.position = new Vector3(
+                Mathf.Clamp(transform.position.x, 0f, 50f),
+                Mathf.Clamp(transform.position.y, 13f, 13f),
+                Mathf.Clamp(transform.position.z, 0f, 50f));
         }
     }
 }
