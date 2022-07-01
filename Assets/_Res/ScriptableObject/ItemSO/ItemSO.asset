@@ -18,3 +18,5 @@ MonoBehaviour:
   currentLevel: 1
   nextBonusLevel: 100
   itemName: Food Truck
+  description: "Food truck \u2013 furgonetka b\u0119d\u0105ca punktem sprzeda\u017Cy
+    jedzenia, zwykle zaliczanego"

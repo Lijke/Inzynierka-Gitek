@@ -10,4 +10,6 @@ public class ItemSO : ScriptableObject{
     public float currentLevel;
     public float nextBonusLevel;
     public string itemName;
+    [TextArea(5, 20)] 
+    public string description;
 }
