@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class ShopPanelDetails : MonoBehaviour{
     [Header("Ui")] 
@@ -14,6 +16,8 @@ public class ShopPanelDetails : MonoBehaviour{
 
     [Header("Item")]
     [SerializeField] private ItemSO item;
+
+    [Header("Upgrade1")] public List<UpgradeUI> upgradeUis;
     public void SetupView(ItemSO item){
         this.item = item;
         itemName.text = item.itemName;
@@ -22,5 +26,8 @@ public class ShopPanelDetails : MonoBehaviour{
         currentPrice.text = item.currentPrice.ToString();
         currentDuration.text = item.currentDuration.ToString();
         desription.text = item.description;
+        for (int i = 0; i < item.upgradeSo.Count; i++){
+            upgradeUis[i].SetUpgrade(item, i);
+        }
     }
 }

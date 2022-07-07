@@ -15,8 +15,11 @@ MonoBehaviour:
   currentPrice: 5
   currentDuration: 10
   currentBonus: 150
-  currentLevel: 1
+  currentLevel: 30
   nextBonusLevel: 100
   itemName: Food Truck
   description: "Food truck \u2013 furgonetka b\u0119d\u0105ca punktem sprzeda\u017Cy
     jedzenia, zwykle zaliczanego"
+  upgradeSo:
+  - {fileID: 11400000, guid: 9746500c540cd82469569fbf388cf37d, type: 2}
+  - {fileID: 11400000, guid: e9661bd80981c6b4894e861c180e6fc1, type: 2}

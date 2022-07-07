@@ -12,4 +12,11 @@ public class ItemSO : ScriptableObject{
     public string itemName;
     [TextArea(5, 20)] 
     public string description;
+
+    public List<UpgradeSO> upgradeSo;
+
+    public void LevelUp(){
+        currentLevel += 1;
+    }
+    
 }
