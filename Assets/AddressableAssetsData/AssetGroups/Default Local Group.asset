@@ -22,11 +22,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8538bd626cb3e80478f62e319f75e337
-    m_Address: Assets/Assets/LowPolyWater_Pack/Materials/LowPolyWaterMaterial.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 28d333885d15ac24e88a90d691c3014e, type: 2}
   m_SchemaSet:

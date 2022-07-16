@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28199bc3917fcf5419627725f5996cb4, type: 3}
+  m_Name: DurationSO
+  m_EditorClassIdentifier: 
+  durationListReos:
+  - level: 0
+    time: 30
+    cost: 10000
+    expectedLevel: 1
+  - level: 1
+    time: 25
+    cost: 100000000
+    expectedLevel: 100
+  - level: 2
+    time: 20
+    cost: 1e+10
+    expectedLevel: 1000
+  - level: 3
+    time: 15
+    cost: 4e+10
+    expectedLevel: 2000
+  - level: 4
+    time: 10
+    cost: 9e+10
+    expectedLevel: 3000
+  - level: 5
+    time: 5
+    cost: 1.6e+11
+    expectedLevel: 4000
+  currentDurationLevel: 0
+  baseCost: 50
+  expectedLevel: 0100000064000000e8030000d0070000b80b0000a00f0000

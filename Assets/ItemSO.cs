@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "ItemSO")]
 public class ItemSO : ScriptableObject{
@@ -13,10 +16,32 @@ public class ItemSO : ScriptableObject{
     [TextArea(5, 20)] 
     public string description;
 
-    public List<UpgradeSO> upgradeSo;
+    public float baseCost;
+    
+
+    public UpgradeDurationSO upgradeDurationSO;
+
+    public bool maxLevelReached;
+
 
     public void LevelUp(){
         currentLevel += 1;
+        UpdateVariables();
+        GameEvents.LevelUp(this);
+        GameEvents.AddGold();
     }
-    
+    [Button()]
+    public void UpdateVariables(){
+        currentPrice = baseCost * currentLevel;
+    }
+
+    public void SetCurrentDuration(){
+        currentDuration = upgradeDurationSO.GetCurrentDurationTimer();
+    }
+    public void MaxLevelReached(){
+        GameEvents.LevelUp(this);
+        maxLevelReached = true;
+    }
 }
+
+
