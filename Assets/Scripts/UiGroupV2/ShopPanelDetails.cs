@@ -7,10 +7,10 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ShopPanelDetails : MonoBehaviour{
-    [Header("Ui")] 
+    [Header("Ui")]
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private TextMeshProUGUI currentLevel;
-    [SerializeField] private TextMeshProUGUI currentPrice;
+    [SerializeField] private TextMeshProUGUI currentPrice; 
     [SerializeField] private TextMeshProUGUI currentDuration;
     [SerializeField] private TextMeshProUGUI desription;
     [SerializeField] private TextMeshProUGUI goldText;
@@ -19,10 +19,11 @@ public class ShopPanelDetails : MonoBehaviour{
     [Header("Item")]
     [SerializeField] private ItemSO item;
 
-    [FormerlySerializedAs("upgradeUis")] [Header("Upgrade1")]
+    [Header("Upgrade Duration")] 
     public UpgradeDurationUi durationUpgradeUi;
-    public List<TextMeshProUGUI> upgradeText;
 
+    [Header("UpgradeLevel")] 
+    public UpgradeLevelUi upgradeLevelUi;
     private void Awake(){
         GameEvents.onAddGold += UpdateUi;
         GameEvents.onLevelUp += UpdateLevelUi;
@@ -56,8 +57,9 @@ public class ShopPanelDetails : MonoBehaviour{
         currentPrice.text = item.currentPrice.ToString();
         currentDuration.text = item.currentDuration.ToString();
         desription.text = item.description;
+        goldText.text = goldContainer.GetCurrentGold().ToString();
         durationUpgradeUi.Init(item, goldContainer, this.item.baseCost);
         durationUpgradeUi.SetUpgrade();
-        
+        upgradeLevelUi.Init(item);
     }
 }

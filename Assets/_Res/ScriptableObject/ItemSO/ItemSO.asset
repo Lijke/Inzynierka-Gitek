@@ -20,6 +20,6 @@ MonoBehaviour:
   itemName: Food Truck
   description: "Food truck \u2013 furgonetka b\u0119d\u0105ca punktem sprzeda\u017Cy
     jedzenia, zwykle zaliczanego"
-  baseCost: 0
+  baseCost: 50
   upgradeDurationSO: {fileID: 11400000, guid: 9746500c540cd82469569fbf388cf37d, type: 2}
-  maxLevelReached: 0
+  maxLevelReached: 1

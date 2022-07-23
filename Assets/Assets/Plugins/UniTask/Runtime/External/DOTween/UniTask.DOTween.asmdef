@@ -2,7 +2,9 @@
     "name": "UniTask.DOTween",
     "references": [
         "UniTask",
-        "DOTween.Modules"
+        "DOTween.Modules",
+        "UnityEngine.UI",
+        "UnityEditor.UI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
